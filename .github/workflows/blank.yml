@@ -1,4 +1,4 @@
-name: CI / CD for Dev
+name: CI
 on:
   push:
     branches: [master]
@@ -27,14 +27,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           tag_with_ref: true
           tag_with_sha: true
-          build_args: NODE_ENV=development
-  deploy:
-    name: Deploy
-
-    needs: [build]
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: TODO
-        run: echo not implemented..
+          build_args: NODE_ENV=production
