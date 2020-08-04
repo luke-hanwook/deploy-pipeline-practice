@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
 RUN yarn install
-COPY .next .
+COPY .next ./.next
 
 EXPOSE 3000
-CMD ["next", "start"]
+CMD ["yarn", "start"]
